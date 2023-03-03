@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="bdGlAtelierModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="idPersonne" />
+          </Key>
+          <Property Name="idPersonne" Type="int" Nullable="false" />
+          <Property Name="CNIClient" Type="nvarchar" MaxLength="20" />
+          <Property Name="SexeClient" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Gerant">
+          <Key>
+            <PropertyRef Name="idPersonne" />
+          </Key>
+          <Property Name="idPersonne" Type="int" Nullable="false" />
+          <Property Name="identifiantGerant" Type="nvarchar" MaxLength="20" />
+          <Property Name="MotDePasseGerant" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Personne">
+          <Key>
+            <PropertyRef Name="idPersonne" />
+          </Key>
+          <Property Name="idPersonne" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomPersonne" Type="nvarchar" MaxLength="80" />
+          <Property Name="PrenomPersonne" Type="nvarchar" MaxLength="80" />
+          <Property Name="AdressePersonne" Type="nvarchar" MaxLength="150" />
+          <Property Name="TelPersonne" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="bdGlAtelierModelStoreContainer">
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gerant" EntityType="Self.Gerant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personne" EntityType="Self.Personne" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bdGlAtelierModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="idPersonne" />
+          </Key>
+          <Property Name="idPersonne" Type="Int32" Nullable="false" />
+          <Property Name="CNIClient" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SexeClient" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Gerant">
+          <Key>
+            <PropertyRef Name="idPersonne" />
+          </Key>
+          <Property Name="idPersonne" Type="Int32" Nullable="false" />
+          <Property Name="identifiantGerant" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MotDePasseGerant" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Personne">
+          <Key>
+            <PropertyRef Name="idPersonne" />
+          </Key>
+          <Property Name="idPersonne" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomPersonne" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="PrenomPersonne" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="AdressePersonne" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="TelPersonne" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="bdGlAtelierEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Client" EntityType="Self.Client" />
+          <EntitySet Name="Gerant" EntityType="Self.Gerant" />
+          <EntitySet Name="Personne" EntityType="Self.Personne" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bdGlAtelierModelStoreContainer" CdmEntityContainer="bdGlAtelierEntities">
+          <EntitySetMapping Name="Client">
+            <EntityTypeMapping TypeName="bdGlAtelierModel.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="idPersonne" ColumnName="idPersonne" />
+                <ScalarProperty Name="CNIClient" ColumnName="CNIClient" />
+                <ScalarProperty Name="SexeClient" ColumnName="SexeClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gerant">
+            <EntityTypeMapping TypeName="bdGlAtelierModel.Gerant">
+              <MappingFragment StoreEntitySet="Gerant">
+                <ScalarProperty Name="idPersonne" ColumnName="idPersonne" />
+                <ScalarProperty Name="identifiantGerant" ColumnName="identifiantGerant" />
+                <ScalarProperty Name="MotDePasseGerant" ColumnName="MotDePasseGerant" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personne">
+            <EntityTypeMapping TypeName="bdGlAtelierModel.Personne">
+              <MappingFragment StoreEntitySet="Personne">
+                <ScalarProperty Name="idPersonne" ColumnName="idPersonne" />
+                <ScalarProperty Name="NomPersonne" ColumnName="NomPersonne" />
+                <ScalarProperty Name="PrenomPersonne" ColumnName="PrenomPersonne" />
+                <ScalarProperty Name="AdressePersonne" ColumnName="AdressePersonne" />
+                <ScalarProperty Name="TelPersonne" ColumnName="TelPersonne" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDGLAtelierModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="idPersonne" />
+    </Key>
+    <Property Name="idPersonne" Type="int" Nullable="false" />
+    <Property Name="CNIClient" Type="nvarchar" MaxLength="20" />
+    <Property Name="SexeClient" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Gerant">
+    <Key>
+      <PropertyRef Name="idPersonne" />
+    </Key>
+    <Property Name="idPersonne" Type="int" Nullable="false" />
+    <Property Name="identifiantGerant" Type="nvarchar" MaxLength="20" />
+    <Property Name="MotDePasseGerant" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Personne">
+    <Key>
+      <PropertyRef Name="idPersonne" />
+    </Key>
+    <Property Name="idPersonne" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomPersonne" Type="nvarchar" MaxLength="80" />
+    <Property Name="PrenomPersonne" Type="nvarchar" MaxLength="80" />
+    <Property Name="AdressePersonee" Type="nvarchar" MaxLength="150" />
+    <Property Name="TelPersonne" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityContainer Name="BDGLAtelierModelStoreContainer">
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gerant" EntityType="Self.Gerant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personne" EntityType="Self.Personne" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

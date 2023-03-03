@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDGLAtelierModelStoreContainer" CdmEntityContainer="BDGLAtelierEntities">
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="BDGLAtelierModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="idPersonne" ColumnName="idPersonne" />
+          <ScalarProperty Name="CNIClient" ColumnName="CNIClient" />
+          <ScalarProperty Name="SexeClient" ColumnName="SexeClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gerant">
+      <EntityTypeMapping TypeName="BDGLAtelierModel.Gerant">
+        <MappingFragment StoreEntitySet="Gerant">
+          <ScalarProperty Name="idPersonne" ColumnName="idPersonne" />
+          <ScalarProperty Name="identifiantGerant" ColumnName="identifiantGerant" />
+          <ScalarProperty Name="MotDePasseGerant" ColumnName="MotDePasseGerant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personne">
+      <EntityTypeMapping TypeName="BDGLAtelierModel.Personne">
+        <MappingFragment StoreEntitySet="Personne">
+          <ScalarProperty Name="idPersonne" ColumnName="idPersonne" />
+          <ScalarProperty Name="NomPersonne" ColumnName="NomPersonne" />
+          <ScalarProperty Name="PrenomPersonne" ColumnName="PrenomPersonne" />
+          <ScalarProperty Name="AdressePersonee" ColumnName="AdressePersonee" />
+          <ScalarProperty Name="TelPersonne" ColumnName="TelPersonne" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

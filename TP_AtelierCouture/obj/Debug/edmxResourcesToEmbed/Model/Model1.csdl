@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bdGlAtelierModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="idPersonne" />
+    </Key>
+    <Property Name="idPersonne" Type="Int32" Nullable="false" />
+    <Property Name="CNIClient" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SexeClient" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Gerant">
+    <Key>
+      <PropertyRef Name="idPersonne" />
+    </Key>
+    <Property Name="idPersonne" Type="Int32" Nullable="false" />
+    <Property Name="identifiantGerant" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MotDePasseGerant" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Personne">
+    <Key>
+      <PropertyRef Name="idPersonne" />
+    </Key>
+    <Property Name="idPersonne" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomPersonne" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="PrenomPersonne" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="AdressePersonne" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TelPersonne" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="bdGlAtelierEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Client" EntityType="Self.Client" />
+    <EntitySet Name="Gerant" EntityType="Self.Gerant" />
+    <EntitySet Name="Personne" EntityType="Self.Personne" />
+  </EntityContainer>
+</Schema>
